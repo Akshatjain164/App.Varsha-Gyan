@@ -188,25 +188,9 @@ export function MissionShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isHindi, setIsHindi] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
   const touchStartX = useRef(0)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % missions.length)
@@ -228,13 +212,15 @@ export function MissionShowcase() {
   }
 
   return (
-    <section ref={containerRef} className="relative py-16 md:py-24 px-4 overflow-hidden">
+    <section ref={containerRef} className="relative py-16 md:py-24 px-4 overflow-hidden z-10">
+      {/* Dark backdrop */}
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm pointer-events-none" />
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
-        <div id="missions" className={`text-center mb-8 md:mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div id="missions" className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-foreground">Explore </span>
             <span className="text-primary text-glow-cyan">Missions</span>
@@ -263,7 +249,7 @@ export function MissionShowcase() {
 
         {/* Carousel */}
         <div
-          className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className="relative"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
