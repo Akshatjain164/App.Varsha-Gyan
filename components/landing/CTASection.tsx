@@ -23,7 +23,7 @@ export function CTASection() {
   return (
     <section ref={sectionRef} className="relative py-20 md:py-28 px-4 z-10">
       {/* Dark backdrop */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-background/30 dark:bg-background/80 backdrop-blur-sm pointer-events-none" />
       
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className={`relative rounded-3xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

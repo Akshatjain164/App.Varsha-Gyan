@@ -77,7 +77,7 @@ export function FeaturesSection() {
   return (
     <section ref={sectionRef} className="relative py-20 md:py-28 px-4 z-10">
       {/* Dark backdrop */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-background/30 dark:bg-background/80 backdrop-blur-sm pointer-events-none" />
 
       <div className="relative z-10">
         {/* Section Header */}

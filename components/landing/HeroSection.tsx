@@ -24,7 +24,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-16 z-10">
       {/* Subtle overlay — lets 3D scene show through */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/60 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background/10 to-background/60 dark:from-background/40 dark:via-background/20 dark:to-background/80 pointer-events-none z-0" />
 
       <div className="relative z-10 flex flex-col items-center">
         {/* Badge */}
@@ -37,8 +37,7 @@ export function HeroSection() {
 
         {/* Title with word-by-word reveal */}
         <h1 
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-center leading-[0.95] mb-6 md:mb-8 tracking-tight"
-          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5)' }}
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-center leading-[0.95] mb-6 md:mb-8 tracking-tight drop-shadow-lg dark:drop-shadow-[0_0_40px_rgba(0,0,0,0.8)]"
         >
           {['Learn ', 'Science'].map((word, i) => (
             <span 

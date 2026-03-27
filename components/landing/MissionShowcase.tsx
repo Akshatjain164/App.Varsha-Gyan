@@ -214,7 +214,7 @@ export function MissionShowcase() {
   return (
     <section ref={containerRef} className="relative py-16 md:py-24 px-4 overflow-hidden z-10">
       {/* Dark backdrop */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-background/30 dark:bg-background/80 backdrop-blur-sm pointer-events-none" />
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
