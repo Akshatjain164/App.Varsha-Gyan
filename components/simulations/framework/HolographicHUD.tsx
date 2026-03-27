@@ -68,7 +68,7 @@ export function HolographicHUD({ children, missionActive = false, color = 'cyan'
       <div className="absolute inset-0 pointer-events-none scanlines opacity-30" />
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className={`relative z-10 ${missionActive ? 'pt-12 md:pt-10' : ''}`}>
         {children}
       </div>
     </div>

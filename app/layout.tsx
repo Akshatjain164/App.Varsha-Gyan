@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Orbitron, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { OfflinePreloader } from '@/components/OfflinePreloader'
 import './globals.css'
 
 const orbitron = Orbitron({ 
@@ -57,6 +58,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <OfflinePreloader />
         <Analytics />
       </body>
     </html>

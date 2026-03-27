@@ -15,7 +15,7 @@ import { useLanguage } from '@/lib/i18n/use-language'
 export default function LightShadowsSimulation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(0)
   const isDragging = useRef(false)
   const supabase = createClient()
   const { isHindi, toggleLanguage } = useLanguage()
@@ -154,7 +154,7 @@ export default function LightShadowsSimulation() {
 
     // Shadow calculation (with safety guards)
     const lightToGround = groundY - ly
-    const lightToTop = ly - objectTop
+    const lightToTop = objectTop - ly // Fixed: Y is downwards, so objectTop (> ly) minus ly gives positive distance
     
     if (lightToGround > 0 && lightToTop > 0.1) {
       const shadowScale = lightToGround / lightToTop
