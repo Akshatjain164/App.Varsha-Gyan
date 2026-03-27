@@ -25,6 +25,12 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Varsha-Gyan | Gamified STEM Learning Platform',
   description: 'Experience science like never before. Interactive simulations, gamified missions, and immersive learning for Class 6-12 students.',
+  applicationName: 'Varsha-Gyan',
+  appleWebApp: {
+    capable: true,
+    title: 'Varsha-Gyan',
+    statusBarStyle: 'black-translucent',
+  },
   keywords: ['STEM education', 'gamified learning', 'science simulations', 'physics experiments', 'chemistry lab', 'interactive education'],
   authors: [{ name: 'Varsha-Gyan' }],
   openGraph: {
