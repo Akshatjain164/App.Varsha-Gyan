@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { Menu, X, Sun, Moon } from 'lucide-react'
+import { InstallAppButton } from './InstallAppButton'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -175,6 +176,7 @@ export function Navbar() {
                 Sign Up
               </Button>
             </Link>
+            <InstallAppButton />
           </div>
         </div>
       </div>
